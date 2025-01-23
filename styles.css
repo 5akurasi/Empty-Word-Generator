@@ -1,0 +1,120 @@
+/* Общий стиль для страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+/* Контейнер */
+.container {
+    display: flex;
+    width: 80%;
+    height: 70%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Левая колонка */
+.sidebar {
+    background: linear-gradient(to bottom, #ff9a9e, #fbc2eb);
+    width: 30%;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Убираем обводку с текста и кнопки */
+.sidebar h1, .sidebar p, .generate-btn {
+    border: none;
+}
+
+/* Текст "Re-Nova" с градиентом */
+.sidebar h1 {
+    font-size: 3rem; /* Увеличен размер шрифта */
+    margin: 0;
+    background: linear-gradient(to right, #0218aa, #087b89); /* Новый градиент */
+    -webkit-background-clip: text; /* Применение градиента к тексту */
+    color: transparent; /* Сделать сам текст прозрачным */
+    text-shadow: none; /* Убираем тень */
+}
+
+/* Описание */
+.sidebar p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Кнопка */
+.generate-btn {
+    margin-top: 20px; /* Отступ для кнопки */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Эффект кнопки при наведении */
+.generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+.generate-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.generate-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Правая колонка */
+.main-content {
+    background: linear-gradient(to right, #fad0c4, #ffd1ff);
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#generated-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
